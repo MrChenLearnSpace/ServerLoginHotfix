@@ -9,13 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="MMONetworkServer">
-      <HintPath>..\MMONetworkServer\bin\Debug\netcoreapp3.1\MMONetworkServer.dll</HintPath>
-    </Reference>
+    <Folder Include="Player\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Player\" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MMONetworkServer">
+      <HintPath>..\MMONetworkServer\bin\Debug\netcoreapp3.1\MMONetworkServer.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

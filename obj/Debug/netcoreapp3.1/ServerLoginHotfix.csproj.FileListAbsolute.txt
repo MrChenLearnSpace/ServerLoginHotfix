@@ -14,7 +14,6 @@ F:\project\VSProject\ServerLoginHotfix\bin\Debug\netcoreapp3.1\K4os.Hash.xxHash.
 F:\project\VSProject\ServerLoginHotfix\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
 F:\project\VSProject\ServerLoginHotfix\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 F:\project\VSProject\ServerLoginHotfix\bin\Debug\netcoreapp3.1\MMONetworkServer.pdb
-F:\project\VSProject\ServerLoginHotfix\obj\Debug\netcoreapp3.1\ServerLoginHotfix.csproj.AssemblyReference.cache
 F:\project\VSProject\ServerLoginHotfix\obj\Debug\netcoreapp3.1\ServerLoginHotfix.GeneratedMSBuildEditorConfig.editorconfig
 F:\project\VSProject\ServerLoginHotfix\obj\Debug\netcoreapp3.1\ServerLoginHotfix.AssemblyInfoInputs.cache
 F:\project\VSProject\ServerLoginHotfix\obj\Debug\netcoreapp3.1\ServerLoginHotfix.AssemblyInfo.cs
@@ -22,3 +21,4 @@ F:\project\VSProject\ServerLoginHotfix\obj\Debug\netcoreapp3.1\ServerLoginHotfix
 F:\project\VSProject\ServerLoginHotfix\obj\Debug\netcoreapp3.1\ServerLoginHotfix.csproj.CopyComplete
 F:\project\VSProject\ServerLoginHotfix\obj\Debug\netcoreapp3.1\ServerLoginHotfix.dll
 F:\project\VSProject\ServerLoginHotfix\obj\Debug\netcoreapp3.1\ServerLoginHotfix.pdb
+F:\project\VSProject\ServerLoginHotfix\obj\Debug\netcoreapp3.1\ServerLoginHotfix.csproj.AssemblyReference.cache

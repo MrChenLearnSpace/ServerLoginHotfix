@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using MMONetworkServer.Core;
-namespace MMONetworkServer.Logic {
+using Newtonsoft.Json;
+namespace ServerLoginHotfix {
     //处理角色消息 ，具体是登录成功后的逻辑,比如:强化装备、打副本
     public partial class HandlePlayerMsg {
         public void MsgGetScore(Player player, ProtocolBase protoBase) {
-            
+
             /*ProtocolBytes protocolRet = new ProtocolBytes();
             protocolRet.AddString("GetScore");
             protocolRet.AddInt(player.data.score);
@@ -25,5 +26,17 @@ namespace MMONetworkServer.Logic {
         public void MsgWWWW(Player player, ProtocolBase protoBase) {
             Console.WriteLine("wwwwwww");
         }
+        public void MsgGetPlayerData(Player player, ProtocolBase protoBase) {
+            string data = JsonConvert.SerializeObject(player.data);
+            ProtocolBytes protocolGetPlayerData = new ProtocolBytes();
+            protocolGetPlayerData.AddString("GetPlayerData");
+            protocolGetPlayerData.AddString(data);
+            //player.Send(protocolGetPlayerData);
+            player.conn.AsySend(protocolGetPlayerData);
+        }
+        public void MsgAddWeapon(Player player, ProtocolBase protoBase) {
+
+        }
+
     }
 }

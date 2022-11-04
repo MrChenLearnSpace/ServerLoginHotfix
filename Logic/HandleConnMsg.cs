@@ -5,7 +5,7 @@ using MMONetworkServer.Core;
 using System.Reflection;
 using MMONetworkServer;
 using MMONetworkServer.net;
-namespace MMONetworkServer.Logic {
+namespace ServerLoginHotfix {
     //处理连接消息 ，具体是登录前的逻辑，比如:用户名密码校验、注册账号
     public partial class HandleConnMsg {
 
