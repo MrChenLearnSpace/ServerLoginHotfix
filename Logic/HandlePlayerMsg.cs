@@ -31,7 +31,7 @@ namespace ServerLoginHotfix {
             Player player = iplayer as Player;
             string data = JsonConvert.SerializeObject(player.data);
             ProtocolBytes protocolGetPlayerData = new ProtocolBytes();
-            protocolGetPlayerData.AddString("GetPlayerData");
+            protocolGetPlayerData.AddString("MsgGetPlayerData");
             protocolGetPlayerData.AddString(data);
             //player.Send(protocolGetPlayerData);
             player.conn.AsySend(protocolGetPlayerData);
