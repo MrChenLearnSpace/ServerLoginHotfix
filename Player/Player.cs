@@ -8,7 +8,8 @@ using System.Runtime.Serialization;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using MMONetworkServer.Core;
-namespace MMONetworkServer.Logic {
+using MMONetworkServer;
+namespace ServerLoginHotfix {
    // 游戏中的角色，功能包括:给角色发消息、踢下线、保存角色数据等
     public class Player : IPlayer {
         public string id;

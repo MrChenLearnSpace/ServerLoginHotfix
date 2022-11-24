@@ -9,27 +9,30 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using MMONetworkServer.Core;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json;
 //using System.Web.Script.Serialization;
-namespace MMONetworkServer.Logic {
+namespace ServerLoginHotfix {
     public class LogicManager {
+        #region 数据库全局
         // public static LogicManager instance;
-      //  JavaScriptSerializer Js = new JavaScriptSerializer();
+        // JavaScriptSerializer Js = new JavaScriptSerializer();
         public LogicManager() {
             //if (instance == null)
             //    instance = this;
         }
+
         public byte[] Serialize(PlayerData playerData) {
             //序列化
-            IFormatter formatter = new BinaryFormatter();
-            MemoryStream stream = new MemoryStream();
+           // IFormatter formatter = new BinaryFormatter();
+           // MemoryStream stream = new MemoryStream();
             //PlayerData playerData = new PlayerData();
 
             try {
-               // string data = Js.Serialize(playerData);
-                formatter.Serialize(stream, playerData);
-
-                //return Encoding.UTF8.GetBytes(data);
-                return stream.ToArray();
+                string data = JsonConvert.SerializeObject(playerData);
+                //formatter.Serialize(stream, playerData);
+                Console.WriteLine(data);
+                return Encoding.UTF8.GetBytes(data);
+                //return stream.ToArray();
             }
             catch (Exception e) {
                 Console.WriteLine("[DataMgr]CreatePlayer 序列化" + e.Message);
@@ -38,13 +41,15 @@ namespace MMONetworkServer.Logic {
         }
         public bool UnSerialize(byte[] playerStream, ref PlayerData playerdata) {
             //CodeLoader.instance.hotfix.b
-            MemoryStream stream = new MemoryStream(playerStream);
+            //MemoryStream stream = new MemoryStream(playerStream);
             try {
-                BinaryFormatter formatter = new BinaryFormatter();
+                //BinaryFormatter formatter = new BinaryFormatter();
                 //formatter.Binder = new AssemlyDiffuse();
-                 playerdata = (PlayerData)formatter.Deserialize(stream);
-               // string data = Encoding.UTF8.GetString(playerStream);
-                //playerdata = Js.Deserialize<PlayerData>(data);
+                // playerdata = (PlayerData)formatter.Deserialize(stream);
+                string data = Encoding.UTF8.GetString(playerStream);
+                Console.WriteLine(data);
+
+                playerdata = JsonConvert.DeserializeObject<PlayerData>(data);
                 return true;
             }
             catch (SerializationException e) {
@@ -76,5 +81,9 @@ namespace MMONetworkServer.Logic {
             }
             return true;
         }
+        #endregion
+        #region debug部分
+
+        #endregion
     }
 }
