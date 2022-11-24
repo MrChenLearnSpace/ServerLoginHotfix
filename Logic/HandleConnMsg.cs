@@ -9,8 +9,11 @@ namespace ServerLoginHotfix {
     //处理连接消息 ，具体是登录前的逻辑，比如:用户名密码校验、注册账号
     public partial class HandleConnMsg {
 
-        HandlePlayerEvent handlePlayerEvent = new HandlePlayerEvent();
-        LogicManager logicManager = new LogicManager();
+        static HandlePlayerEvent handlePlayerEvent = new HandlePlayerEvent();
+        static LogicManager logicManager ;
+        public HandleConnMsg() {
+            logicManager = new LogicManager();
+        }
         public void MsgHeatBeat(Conn conn, ProtocolBase protoBase) {
             conn.lastTickTime = Sys.GetTimeStamp();
             Console.WriteLine("[更新心跳时间]" + conn.GetAdress());
@@ -64,6 +67,7 @@ namespace ServerLoginHotfix {
             //是否已经登录
             ProtocolBytes protocolLogout = new ProtocolBytes();
             protocolLogout.AddString("Logout");
+           // logicManager = new LogicManager();
             if (!logicManager.KickOff(id, protocolLogout)) {
                 protocolRet.AddInt(-1);
                 conn.Send(protocolRet);
